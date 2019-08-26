@@ -25,4 +25,14 @@
         <include refid="Base_Column_List" />
         FROM test
     </select>
+
+    <select id="getNameByIds" resultMap="BaseResultMap" >
+        SELECT
+        <include refid="Base_Column_List" />
+        FROM test where id in
+        <foreach collection="list" item="itemid" index="index"
+                 open="(" close=")" separator=",">
+            #{itemid}
+        </foreach>
+    </select>
 </mapper>

@@ -24,4 +24,7 @@ public interface TestMapper {
     List<TestModel> getAll();
 
     List<TestModel> getAllByPage(Map pageInfo);
+    List<TestModel> getNameByIds(List<String> ids);
+
+
 }
